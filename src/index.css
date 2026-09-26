@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #5a4a58;
+  --color-brand-hover: #453743;
+  --color-brand-muted: #d9cad6;
+  --color-pastel-blue: #c5def0;
+  --color-pastel-lavender: #e4ddf6;
+  --color-pastel-blush: #fadfe8;
+  --color-pastel-peach: #fedecb;
+  --color-charcoal-primary: #1e222b;
+  --color-charcoal-secondary: #3d4452;
+  --color-charcoal-muted: #6b7688;
+}
+
+@layer base {
+  :root {
+    --font-serif: "Vazirmatn", "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Vazirmatn", "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: radial-gradient(circle at 50% 0%, #f4f2f9 0%, #e8e6f2 50%, #dedbe9 100%);
+    color: #1a1e26;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: rtl;
+    text-align: right;
+    min-height: 100vh;
+  }
+}
+
+.font-serif {
+  font-family: "Vazirmatn", "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+
+.font-sans {
+  font-family: "Vazirmatn", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* ─── Premium 3D Tactile Claymorphic & Volumetric Glass Utilities ─── */
+
+/* 1. Main 3D Floating Glass Shell */
+.glass-panel-vitality {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(250, 248, 254, 0.9) 50%, rgba(245, 240, 250, 0.94) 100%);
+  backdrop-filter: blur(45px) saturate(170%);
+  -webkit-backdrop-filter: blur(45px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    inset 0 2px 3px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 4px 0 rgba(210, 195, 230, 0.35),
+    inset 0 0 35px 0 rgba(255, 235, 220, 0.4),
+    0 35px 80px -15px rgba(35, 20, 55, 0.22),
+    0 15px 30px -8px rgba(35, 20, 55, 0.12),
+    0 2px 6px 0 rgba(35, 20, 55, 0.06);
+}
+
+/* 2. Volumetric 3D Clay Card (Convex pillowy surface, inner bevel highlight, diffused multi-stage drop shadow) */
+.clay-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fbf9fd 60%, #f3eff9 100%);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 3.5px 0 rgba(215, 205, 230, 0.45),
+    inset 1.5px 0 2px 0 rgba(255, 255, 255, 0.8),
+    0 16px 36px -8px rgba(50, 35, 75, 0.13),
+    0 6px 14px -3px rgba(50, 35, 75, 0.08),
+    0 1px 3px 0 rgba(50, 35, 75, 0.04);
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.clay-card:hover {
+  box-shadow: 
+    inset 0 2px 3px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 4px 0 rgba(210, 200, 230, 0.4),
+    0 20px 42px -8px rgba(50, 35, 75, 0.17),
+    0 8px 18px -3px rgba(50, 35, 75, 0.1);
+}
+
+/* 3. Subtle 3D Inset/Floating Card for nested sections */
+.clay-card-subtle {
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 245, 253, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1.5px 2.5px 0 rgba(220, 210, 235, 0.35),
+    0 8px 20px -4px rgba(50, 35, 75, 0.09),
+    0 2px 6px -1px rgba(50, 35, 75, 0.05);
+}
+
+/* 4. 3D Tactile Tiles (for Date/Time Slots, Choice Pills) */
+.tactile-tile-3d {
+  background: linear-gradient(145deg, #ffffff 0%, #f6f3fc 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -1.5px 2px 0 rgba(215, 205, 230, 0.35),
+    0 6px 16px -3px rgba(50, 35, 75, 0.09),
+    0 2px 5px 0 rgba(50, 35, 75, 0.04);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.tactile-tile-3d:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1.5px 2px 0 rgba(215, 205, 230, 0.35),
+    0 10px 22px -4px rgba(50, 35, 75, 0.14),
+    0 3px 8px 0 rgba(50, 35, 75, 0.06);
+}
+
+.tactile-tile-3d:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 
+    inset 0 1.5px 3px 0 rgba(0, 0, 0, 0.08),
+    0 2px 6px -1px rgba(50, 35, 75, 0.08);
+}
+
+/* 5. 3D Active State Tile (Selected Dark Metallic) */
+.tactile-tile-3d-active {
+  background: linear-gradient(145deg, #2a2e3a 0%, #171a22 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2px 3px 0 rgba(0, 0, 0, 0.5),
+    0 12px 28px -5px rgba(23, 26, 34, 0.45),
+    0 4px 10px -2px rgba(23, 26, 34, 0.25);
+  transform: translateY(-1px);
+}
+
+/* 6. Tactile 3D Action Buttons */
+.clay-button-primary {
+  background: linear-gradient(150deg, #282d38 0%, #161820 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2.5px 3.5px 0 rgba(0, 0, 0, 0.45),
+    0 16px 32px -6px rgba(22, 24, 32, 0.42),
+    0 6px 14px -3px rgba(22, 24, 32, 0.22);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.clay-button-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -2.5px 3.5px 0 rgba(0, 0, 0, 0.45),
+    0 20px 38px -6px rgba(22, 24, 32, 0.48),
+    0 8px 18px -3px rgba(22, 24, 32, 0.26);
+}
+
+.clay-button-primary:active {
+  transform: translateY(2px) scale(0.985);
+  box-shadow: 
+    inset 0 2px 4px 0 rgba(0, 0, 0, 0.5),
+    0 4px 12px -2px rgba(22, 24, 32, 0.3);
+}
+
+.clay-button-pastel {
+  background: linear-gradient(145deg, #ffffff 0%, #f4effc 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  color: #21252d;
+  box-shadow: 
+    inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 3px 0 rgba(215, 200, 235, 0.4),
+    0 10px 24px -5px rgba(65, 45, 95, 0.15),
+    0 3px 8px -2px rgba(65, 45, 95, 0.08);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.clay-button-pastel:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 1),
+    0 14px 28px -5px rgba(65, 45, 95, 0.18);
+}
+
+.clay-button-pastel:active {
+  transform: translateY(1.5px) scale(0.985);
+  box-shadow: 
+    inset 0 1.5px 3px 0 rgba(65, 45, 95, 0.12),
+    0 4px 10px -2px rgba(65, 45, 95, 0.08);
+}
+
+/* 7. 3D Floating Bottom Navigation Bar */
+.nav-dock-3d {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.96) 0%, rgba(250, 248, 255, 0.92) 100%);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 3px 0 rgba(215, 205, 235, 0.4),
+    0 24px 55px -10px rgba(45, 30, 65, 0.2),
+    0 8px 20px -4px rgba(45, 30, 65, 0.1);
+}
+
+/* 8. 3D Beveled Pill */
+.clay-pill-3d {
+  background: linear-gradient(145deg, #ffffff 0%, #f6f2fc 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -1.5px 2px 0 rgba(210, 200, 230, 0.35),
+    0 4px 12px -2px rgba(50, 35, 75, 0.08);
+}
+
+/* 9. 3D Inset Input Field */
+.input-3d {
+  background: linear-gradient(160deg, #f8f7fc 0%, #ffffff 100%);
+  border: 1px solid rgba(220, 215, 235, 0.7);
+  box-shadow: 
+    inset 0 2px 4px 0 rgba(45, 30, 65, 0.06),
+    inset 0 1px 2px 0 rgba(45, 30, 65, 0.04),
+    0 1px 2px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease-in-out;
+}
+
+.input-3d:focus {
+  border-color: rgba(78, 59, 110, 0.6);
+  background: #ffffff;
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(78, 59, 110, 0.08),
+    0 0 0 3.5px rgba(110, 85, 160, 0.18),
+    0 6px 18px -4px rgba(78, 59, 110, 0.12);
+  outline: none;
+}
+
+/* Soft Inner Specular and Warm Glows */
+.inner-warm-glow {
+  box-shadow: inset 0 0 24px rgba(254, 234, 222, 0.5);
+}
+
+.inner-lavender-glow {
+  box-shadow: inset 0 0 24px rgba(235, 225, 252, 0.45);
+}
+
+.inner-blue-glow {
+  box-shadow: inset 0 0 24px rgba(210, 232, 248, 0.45);
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations for organic pastel blobs */
+@keyframes floatOrganic1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(25px, -30px) scale(1.06);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.96);
+  }
+}
+
+@keyframes floatOrganic2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-30px, 25px) scale(1.08);
+  }
+  66% {
+    transform: translate(20px, -25px) scale(0.94);
+  }
+}
+
+@keyframes floatOrganic3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(15px, 25px) scale(1.05);
+  }
+}
+
+.animate-organic-1 {
+  animation: floatOrganic1 14s ease-in-out infinite;
+}
+
+.animate-organic-2 {
+  animation: floatOrganic2 16s ease-in-out infinite;
+}
+
+.animate-organic-3 {
+  animation: floatOrganic3 18s ease-in-out infinite;
+}
+
+@keyframes metallicShimmer {
+  0% {
+    transform: translateX(-180%) skewX(-20deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.7;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  48% {
+    transform: translateX(280%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(280%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-metallic-shimmer {
+  animation: metallicShimmer 6.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes rubyGlowBreath {
+  0%, 100% {
+    box-shadow: 0 0 10px 0px rgba(244, 63, 94, 0.2), inset 0 0 6px 0px rgba(244, 63, 94, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 18px 2px rgba(244, 63, 94, 0.4), inset 0 0 12px 1px rgba(244, 63, 94, 0.22);
+  }
+}
+
+.animate-ruby-glow {
+  animation: rubyGlowBreath 3.5s ease-in-out infinite;
+}
